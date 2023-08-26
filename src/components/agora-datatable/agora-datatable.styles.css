@@ -1,3 +1,12 @@
 .table {
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    width: 90%;
+    margin: auto;
+}
+
+.table-container {
     margin: 48px;
 }

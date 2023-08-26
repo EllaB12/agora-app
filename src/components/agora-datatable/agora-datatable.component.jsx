@@ -58,7 +58,9 @@ const AgoraDatatable = ({ users, columns }) => {
     }));
 
     return (
-        <Table className="table" columns={resizableColumns} dataSource={users} />
+        <div className="table-container">
+            <Table className="table" columns={resizableColumns} dataSource={users} />
+        </div>
     )
 }
 

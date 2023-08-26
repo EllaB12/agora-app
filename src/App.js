@@ -1,7 +1,8 @@
 import './App.css';
 import { Component } from 'react';
+import { Avatar } from 'antd';
 import { Input } from 'antd';
-import { SearchOutlined} from '@ant-design/icons'
+import { SearchOutlined } from '@ant-design/icons'
 import AgoraDatatable from './components/agora-datatable/agora-datatable.component';
 
 const ColumnFilter = ({ setSelectedKeys, selectedKeys, confirm }) => (
@@ -25,7 +26,7 @@ class App extends Component {
       users: [],
       columns: [
         {
-          title: 'Name',
+          title: 'User',
           dataIndex: 'fullName',
           key: 'fullName',
           filterDropdown: ColumnFilter,
@@ -33,6 +34,12 @@ class App extends Component {
           onFilter: (value, record) => {
             return record.fullName.toLowerCase().includes(value.toLowerCase());
           },
+          render: (text, record) => (
+            <div>
+              <Avatar src={record.picture.large} />
+              <span style={{ marginLeft: 8 }}>{text}</span>
+            </div>
+          ),
           width: 200
         },
         {
